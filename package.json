@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/mateuschaves/TaisOndeServer/issues"
   },
-  "homepage": "https://github.com/mateuschaves/TaisOndeServer#readme"
+  "homepage": "https://github.com/mateuschaves/TaisOndeServer#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.2.0"
+  }
 }
