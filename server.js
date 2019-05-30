@@ -1,11 +1,15 @@
-const app = require('express')();
-const server = require('http').Server(app);
-const io = require('socket.io')(server);
+var express = require('express');
+var http = require('http')
+var socketio = require('socket.io');
+var cors = require('cors');
 
-server.listen(3000, () => {
-    console.log('Servidou iniciou na porta 3000 !');
-});
+var app = express();
+app.use(cors());
+var server = http.Server(app);
+var websocket = socketio(server);
+server.listen(3000, () => console.log('listening on *:3000'));
 
-io.on('connection', function(socket){
-    console.log(socket.id);
+// The event will be called when a client is connected.
+websocket.on('connection', (socket) => {
+  console.log('A client just joined on', socket.id);
 });
